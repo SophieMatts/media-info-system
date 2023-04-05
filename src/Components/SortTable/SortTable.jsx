@@ -3,20 +3,37 @@ import marathonResults from '../../Data/MarathonResults.json';
 
 function SortTable() {
   const [athletes, setAthletes] = useState(marathonResults.results.athletes);
+  const [order, setOrder] = useState("ASC");
+  const sorting =(col)=>{
+    if (order === "ASC"){
+      const sorted = [...athletes].sort((a,b)=>
+        a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
+      );
+      setAthletes(sorted);
+      setOrder("DSC");
+    }
+    if (order === "DSC"){
+      const sorted = [...athletes].sort((a,b)=>
+        a[col].toLowerCase() < b[col].toLowerCase() ? 1 : -1
+      );
+      setAthletes(sorted);
+      setOrder("ASC");
+    }
+  }
 
   return (
-    <div>
-      <table>
-        <thead>
+    <div className='container'>
+      <table className='table table-bordered table-striped table-hover table-sm'>
+        <thead className='thead-dark'>
           <tr>
-            <th>Rank</th>
+            <th onClick={()=>sorting("rank")}>Rank ▼</th>
             <th>First Name</th>
             <th>Surname</th>
             <th>Athlete ID</th>
             <th>Finish Time</th>
             <th>Race Progress</th>
             <th>Team Name</th>
-            <th>Bib Number</th>
+            <th onClick={()=>sorting("bibnumber")}>Bib Number ▼</th>
             <th>Flag</th>
             <th>Country</th>
           </tr>
