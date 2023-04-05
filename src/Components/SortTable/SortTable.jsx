@@ -4,17 +4,19 @@ import marathonResults from '../../Data/MarathonResults.json';
 function SortTable() {
   const [athletes, setAthletes] = useState(marathonResults.results.athletes);
   const [order, setOrder] = useState("ASC");
+
   const sorting =(col)=>{
+
     if (order === "ASC"){
       const sorted = [...athletes].sort((a,b)=>
-        a[col].toLowerCase() > b[col].toLowerCase() ? 1 : -1
+        parseInt(a[col], 10) > parseInt(b[col], 10) ? 1 : -1
       );
       setAthletes(sorted);
       setOrder("DSC");
     }
     if (order === "DSC"){
       const sorted = [...athletes].sort((a,b)=>
-        a[col].toLowerCase() < b[col].toLowerCase() ? 1 : -1
+        parseInt(a[col], 10) < parseInt(b[col], 10) ? 1 : -1
       );
       setAthletes(sorted);
       setOrder("ASC");
