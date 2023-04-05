@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import Data from 'src/Data/MarathonResults.json';
+import marathonResults from '../../Data/MarathonResults.json';
 
 
 function SortTable() {
-  const [data, setdata] = useState(Data);
+  const [athletes, setAthletes] = useState(marathonResults.results.athletes);
 
   return (
     <div>
@@ -16,11 +16,11 @@ function SortTable() {
         </thead>
 
         <tbody>
-          { data.map((d)=>(
-            <tr key={d.id}>
-              <td>{d.rank}</td>
-              <td>{d.firstname}</td>
-              <td>{d.surname}</td>
+          { athletes.map((athlete)=>(
+            <tr key={athlete.id}>
+              <td>{athlete.rank}</td>
+              <td>{athlete.firstname}</td>
+              <td>{athlete.surname}</td>
             </tr>
           ))}
 
