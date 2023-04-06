@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import marathonResults from '../../Data/MarathonResults.json';
+import './SortTable.css'
 
 function SortTable() {
   const [athletes, setAthletes] = useState(marathonResults.results.athletes);
@@ -25,7 +26,7 @@ function SortTable() {
 
   return (
     <div className='container'>
-      <table className='table table-bordered table-striped table-hover table-sm'>
+      <table className='table table-dark table-bordered table-striped table-hover table-sm'>
         <thead className='thead-dark'>
           <tr>
             <th onClick={()=>sorting("rank")}>Rank ▼</th>

@@ -1,0 +1,21 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.Navbar {
+  background: #181818;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.navbar-logo {
+  width: 20%;
+  height: 100%;
+  background-image: url("/public/Girraphic-logo.png");
+  background-size: cover;
+}

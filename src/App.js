@@ -1,14 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Navbar/Navbar';
 import SortTable from './Components/SortTable/SortTable';
-import ExportButton from './Components/ExportButton/ExportButton';
+//import ExportButton from './Components/ExportButton/ExportButton';
+
+
 
 function App() {
   return (
-    <div className="App">
+
+    <div className='App'>
+      <Navbar/>
       <SortTable/>
-      <ExportButton/>
     </div>
+
+
   );
 }
 
