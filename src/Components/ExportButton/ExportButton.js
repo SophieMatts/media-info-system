@@ -5,6 +5,7 @@ import './ExportButton.css'
 function ExportButton(props){
   const {athletes} = props;
 
+  // Using reduce to convert athetes array into an array of rows.
   const data = athletes.reduce((rows, athlete) => {
     const newRow = [athlete.rank, `${athlete.firstname} ${athlete.surname}`, athlete.finishtime, athlete.flag]
     rows.push(newRow)
