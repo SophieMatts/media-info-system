@@ -1,37 +1,27 @@
-import React, { Component } from 'react';
-import { CSVLink, CSVDownload } from "react-csv";
+import React from 'react';
+import { CSVLink } from "react-csv";
+import './ExportButton.css'
 
-const headers = [
-  { label: 'Rank', key: 'setAthletes.rank'},
-  { label: 'First Name', key: 'setAthletes.firstname'},
-  { label: 'Last Name', key: 'setAthletes.lastname'},
-  //{ label: 'Finish Time , key: 'setAthletes.finishtime'},
-  //{ label: 'Country Code , key: 'setAthletes.flag'}
+function ExportButton(props){
+  const {athletes} = props;
 
-];
+  const data = athletes.reduce((rows, athlete) => {
+    const newRow = [athlete.rank, `${athlete.firstname} ${athlete.surname}`, athlete.finishtime, athlete.flag]
+    rows.push(newRow)
+    return rows;
+  }, [["Rank", "Full Name", "Finish Time", "Country Code"]])
 
-
-
-class ExportButton extends Component {
-
-
-
-
-  render() {
-    const { data } = this.state;
-
-    return (
-      <div>
-        <input type="button" value="Export to CSV" onClick={this.downloadReport} />
-        <CSVLink
-          headers={headers}
-          filename={"race_results.csv"}
-          data={data}
-          ref={this.csvLinkEl}
-        />
-      </div>
-    );
-  }
+  return (
+    <div className='button-container'>
+      <CSVLink
+        className='csv-button'
+        filename={"race_results.csv"}
+        data={data}
+      >
+        Download
+      </CSVLink>
+    </div>
+  );
 }
 
 export default ExportButton;

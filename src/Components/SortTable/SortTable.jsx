@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import marathonResults from '../../Data/MarathonResults.json';
 import './SortTable.css'
 
-function SortTable() {
-  const [athletes, setAthletes] = useState(marathonResults.results.athletes);
+function SortTable(props) {
+  const {athletes, setAthletes} = props;
   const [order, setOrder] = useState("ASC");
 
   const sorting =(col)=>{
