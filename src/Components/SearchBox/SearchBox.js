@@ -9,7 +9,7 @@ function SearchBox(props) {
 
   return (
     <>
-      <input name="myInput" value={searchText} onChange={onChange} placeholder="Search Name..." />
+      <input name="myInput" value={searchText} onChange={onChange} placeholder="🔍 Search Name..." />
     </>
   );
 }
