@@ -1,7 +1,7 @@
 {
   "name": "media-info-system",
   "version": "0.1.0",
-  "homepage": "https://sophiematts.github.io/media-info-system",
+  "homepage": "https://SophieMatts.github.io/media-info-system",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

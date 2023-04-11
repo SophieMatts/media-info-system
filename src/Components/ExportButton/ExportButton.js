@@ -19,7 +19,7 @@ function ExportButton(props){
         filename={"race_results.csv"}
         data={data}
       >
-        Download
+        Download CSV
       </CSVLink>
     </div>
   );
